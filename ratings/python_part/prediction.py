@@ -24,7 +24,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
 # Starting knn method for prediction
 
-knn = KNeighborsClassifier(n_neighbors=7)
+knn = KNeighborsClassifier(n_neighbors=7, metric='minkowski')
 
 # Fit the classifier to the training data
 knn.fit(X_train, y_train)

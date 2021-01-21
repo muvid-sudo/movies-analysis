@@ -118,3 +118,24 @@ WC = WordCloud(width=1000, height=500, max_words=500, min_font_size=5)
 positive_words = WC.generate(positive_text)
 plt.imshow(positive_words, interpolation='bilinear')
 plt.show
+
+# Convert results to labels [0, 1]
+y_pred = []
+goal = 0
+for i in range(len(mnbPred)):
+    if mnbPred[i][0] >= 0.5:
+        goal = 0
+        y_pred.append(goal)
+    else:
+        goal = 1
+        y_pred.append(goal)
+        
+
+target_names = ["Negative", "Positive"]
+# Array of polarity labels for reviews from test set
+k = 50
+yneg = np.array([0 for i in range(k)])
+ypos = np.array([1 for i in range(k)])
+y_true = np.append(yneg, ypos)
+
+print(classification_report(y_true, y_pred, target_names=target_names))
