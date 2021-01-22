@@ -28,6 +28,31 @@ Ratings part:
 Reviews part:
 1) Python: Apply the Multinomial Naive Bayes classifier using `scikit-learn`
 
+## Functionality
+Ratings part:
+1) Calculating accuracy of the prediction model
+2) Predicting rating label for the each individual movie based on its year, genre, director, imdbRating and numOfVotesImdb
+```python
+# Testing on "Good Will Hunting" (https://www.imdb.com/title/tt0119217/)
+movie = knn.predict([[1997, 4, 1814, 3, 855094]])
+print("Prediction label for your movie: ", movie[0])
+```
+
+Reviews part:
+1) Determination the polarity of a movie review (for set of reviews or for each individual review)
+2) Bag of words model
+3) Word clouds
+4) Classification report
+
+## Labeling
+Polarity:
+```txt
+1 - Negative (4-5), 2 - Neutral (6-7), 3 - Positive (8-9)
+```
+Genres:
+```txt
+Adventure(1), Action(2), Crime(3), Drama(4), Biography(5), Comedy(6), Western(7), Mystery(8), Horror(9), Animation(10), Sci-Fi(11), Family(12), Romance(13), Fantasy(14), Thriller(15), Documentary(16)
+```
 ## Datasets
 For ratings part:
 * [MovieTweetings](https://github.com/sidooms/MovieTweetings.git)
